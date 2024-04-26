@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CustomRequest {
+public class CustomDto {
 
 	private int id;
 	private String message;

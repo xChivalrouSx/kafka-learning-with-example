@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chivalrous.kafka.example.basic.producer.dto.CustomRequest;
+import com.chivalrous.kafka.example.basic.producer.dto.CustomDto;
 import com.chivalrous.kafka.example.basic.producer.service.ProducerService;
 
 import lombok.RequiredArgsConstructor;
@@ -24,14 +24,8 @@ public class ProducerController {
 		return ResponseEntity.ok().body("Up!..");
 	}
 
-	@PostMapping("/text-message")
-	public ResponseEntity<String> produceTextMessage(@RequestBody String message) {
-		producerService.sendMessage(message);
-		return ResponseEntity.ok().body("Success!..");
-	}
-
 	@PostMapping("/json-message")
-	public ResponseEntity<String> produceJsonMessage(@RequestBody CustomRequest json) {
+	public ResponseEntity<String> produceJsonMessage(@RequestBody CustomDto json) {
 		producerService.sendMessage(json);
 		return ResponseEntity.ok().body("Success!..");
 	}
