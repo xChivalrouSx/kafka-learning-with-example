@@ -1,5 +1,5 @@
 #  Kafka Streams
-For learning kafka streams
+For learning kafka streams basics
 
 ---
 
