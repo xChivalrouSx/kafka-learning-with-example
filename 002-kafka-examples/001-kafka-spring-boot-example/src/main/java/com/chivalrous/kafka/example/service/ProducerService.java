@@ -18,7 +18,8 @@ public class ProducerService {
 	private final KafkaTemplate<String, CustomDto> kafkaTemplate;
 
 	public void sendMessage(CustomDto dto) {
-		log.info("Sending message to kafka. magicalNumber: {}, Message: {}", dto.getId(), dto.getMagicalMessage());
+		log.info("Message sending for topic '{}'. Message Id: {}, Message Content: {}",
+				appSettings.getKafkaProducerTopic(), dto.getId(), dto.getMagicalMessage());
 		kafkaTemplate.send(appSettings.getKafkaProducerTopic(), dto);
 	}
 

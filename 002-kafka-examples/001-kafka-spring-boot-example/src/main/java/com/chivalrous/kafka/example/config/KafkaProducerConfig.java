@@ -15,7 +15,7 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import com.chivalrous.kafka.example.dto.CustomDto;
 
 @Configuration
-public class KafkaConfig {
+public class KafkaProducerConfig {
 
 	@Value("${com.chivalrous.kafka.server}")
 	private String kafkaServer;

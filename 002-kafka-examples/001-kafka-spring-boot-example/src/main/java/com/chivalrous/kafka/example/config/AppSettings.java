@@ -12,4 +12,7 @@ public class AppSettings {
 	@Value("${com.chivalrous.kafka.producer-topic}")
 	private String kafkaProducerTopic;
 
+	@Value("${com.chivalrous.kafka.consumer-topic}")
+	private String kafkaConsumerTopic;
+
 }
