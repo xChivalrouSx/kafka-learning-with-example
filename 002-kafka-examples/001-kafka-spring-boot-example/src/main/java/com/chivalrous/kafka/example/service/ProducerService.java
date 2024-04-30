@@ -1,5 +1,7 @@
 package com.chivalrous.kafka.example.service;
 
+import java.util.UUID;
+
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,7 @@ public class ProducerService {
 	public void sendMessage(CustomDto dto) {
 		log.info("Message sending for topic '{}'. Message Id: {}, Message Content: {}",
 				appSettings.getKafkaProducerTopic(), dto.getId(), dto.getMagicalMessage());
-		kafkaTemplate.send(appSettings.getKafkaProducerTopic(), dto);
+		kafkaTemplate.send(appSettings.getKafkaProducerTopic(), UUID.randomUUID().toString(), dto);
 	}
 
 }

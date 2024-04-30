@@ -61,12 +61,12 @@ bin/kafka-topics.sh --create --topic word-count --bootstrap-server localhost:909
 
 Windows:
 ```shell
-bin/windows/kafka-server-start.bat config/server.properties
+bin/windows/kafka-console-producer.bat --topic message --bootstrap-server localhost:9092
 ```
 
 Linux:
 ```shell
-bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic message --bootstrap-server localhost:9092
 ```
 
 ---

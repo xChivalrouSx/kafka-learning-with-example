@@ -1,7 +1,6 @@
 package com.chivalrous.kafka.example.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +17,6 @@ import lombok.RequiredArgsConstructor;
 public class ProducerController {
 
 	private final ProducerService producerService;
-
-	@GetMapping("/health")
-	public ResponseEntity<String> checkHealth() {
-		return ResponseEntity.ok().body("Up!..");
-	}
 
 	@PostMapping
 	public ResponseEntity<String> produceJsonMessage(@RequestBody CustomDto json) {
