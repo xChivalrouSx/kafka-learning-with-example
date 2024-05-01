@@ -1,0 +1,49 @@
+{
+	"properties": [
+		{
+			"name": "com.chivalrous.kafka.server",
+			"type": "java.lang.String",
+			"description": "Kafka server value"
+		},
+		{
+			"name": "com.chivalrous.kafka.producer-topic",
+			"type": "java.lang.String",
+			"description": "Kafka topic for producer"
+		},
+		{
+			"name": "com.chivalrous.kafka.consumer-topic",
+			"type": "java.lang.String",
+			"description": "Kafka topic for consumer"
+		},
+		{
+			"name": "com.chivalrous.kafka.consumer-group-id",
+			"type": "java.lang.String",
+			"description": "Kafka group id for consumer"
+		},
+		{
+			"name": "com.chivalrous.kafka.streams-app-id",
+			"type": "java.lang.String",
+			"description": "Kafka app id for streams"
+		},
+		{
+			"name": "com.chivalrous.kafka.streams-topic",
+			"type": "java.lang.String",
+			"description": "Kafka topic for streams entry"
+		},
+		{
+			"name": "com.chivalrous.kafka.result-topic-positive-number",
+			"type": "java.lang.String",
+			"description": "Kafka topic for streams result to positive numbers values"
+		},
+		{
+			"name": "com.chivalrous.kafka.result-topic-negative-number",
+			"type": "java.lang.String",
+			"description": "Kafka topic for streams result to negative numbers values"
+		},
+		{
+			"name": "com.chivalrous.kafka.result-topic-not-a-number",
+			"type": "java.lang.String",
+			"description": "Kafka topic for streams result to nonnumbers values"
+		}
+	]
+}

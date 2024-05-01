@@ -76,7 +76,6 @@ bin/kafka-console-producer.sh --topic message --bootstrap-server localhost:9092
 Windows:
 ```shell
 bin/windows/kafka-console-consumer.bat --topic word-count --from-beginning --bootstrap-server localhost:9092 \
- --from-beginning \
  --property print.key=true \
  --property key.separator=" : " \
  --key-deserializer "org.apache.kafka.common.serialization.StringDeserializer" \
@@ -86,7 +85,6 @@ bin/windows/kafka-console-consumer.bat --topic word-count --from-beginning --boo
 Linux:
 ```shell
 bin/kafka-console-consumer.sh --topic word-count --from-beginning --bootstrap-server localhost:9092 \
- --from-beginning \
  --property print.key=true \
  --property key.separator=" : " \
  --key-deserializer "org.apache.kafka.common.serialization.StringDeserializer" \
