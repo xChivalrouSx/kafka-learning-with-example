@@ -3,7 +3,6 @@ package com.chivalrous.kafka.retryable.topic.config;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -27,8 +26,10 @@ public class KafkaProducerConfig {
 	}
 
 	@Bean
-	public KafkaTemplate<String, String> kafkaTemplate() {
-		return new KafkaTemplate<>(producerFactory());
+	public KafkaTemplate<String, String> kafkaTemplate(KafkaProducerInterceptor defaultProducerInterceptor) {
+		KafkaTemplate<String, String> kafkaTemplate = new KafkaTemplate<>(producerFactory());
+		kafkaTemplate.setProducerInterceptor(defaultProducerInterceptor);
+		return kafkaTemplate;
 	}
 
 }

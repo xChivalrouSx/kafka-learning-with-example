@@ -27,15 +27,16 @@ public class Consumer {
 		properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, AppSettings.CONSUMER_GROUP_ID);
 		properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
-		consumer.subscribe(Arrays.asList(AppSettings.KAFKA_DEMO_TOPIC));
+		try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties)) {
+			consumer.subscribe(Arrays.asList(AppSettings.KAFKA_DEMO_TOPIC));
 
-		while (true) {
-			log.info("Pooling...");
-			ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(1000));
-			for (ConsumerRecord<String, String> consumerRecord : consumerRecords) {
-				log.info("Key: {}, Value: {}, Partition: {}, Offset: {}" + consumerRecord.key(),
-						consumerRecord.value(), consumerRecord.partition(), consumerRecord.offset());
+			while (true) {
+				log.info("Pooling...");
+				ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(1000));
+				for (ConsumerRecord<String, String> consumerRecord : consumerRecords) {
+					log.info("Key: {}, Value: {}, Partition: {}, Offset: {}" + consumerRecord.key(),
+							consumerRecord.value(), consumerRecord.partition(), consumerRecord.offset());
+				}
 			}
 		}
 	}

@@ -12,14 +12,12 @@ import org.springframework.kafka.retrytopic.SameIntervalTopicReuseStrategy;
 @RequiredArgsConstructor
 public class KafkaConfig {
 
-    private final AppSettings appSettings;
-
     @Bean
     public RetryTopicConfiguration retryTopicConfiguration(KafkaTemplate<String, String> template) {
         return RetryTopicConfigurationBuilder.newInstance()
                 .doNotAutoCreateRetryTopics()
                 .suffixTopicsWithIndexValues()
-                .maxAttempts(2)
+                .maxAttempts(4)
                 .exponentialBackoff(5_000, 3, 50_000_000)
                 .sameIntervalTopicReuseStrategy(SameIntervalTopicReuseStrategy.MULTIPLE_TOPICS)
                 .retryTopicSuffix(".custom-retry")

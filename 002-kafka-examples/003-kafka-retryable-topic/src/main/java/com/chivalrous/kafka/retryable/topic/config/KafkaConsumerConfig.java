@@ -25,7 +25,7 @@ public class KafkaConsumerConfig {
 	public ConsumerFactory<String, String> consumerFactory() {
 		return new DefaultKafkaConsumerFactory<>(
 				Map.of(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, appSettings.getKafkaServer(),
-						ConsumerConfig.GROUP_ID_CONFIG, appSettings.getKafkaConsumerGroupId(),
+						// ConsumerConfig.GROUP_ID_CONFIG, appSettings.getKafkaConsumerGroupId(),
 						ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, ENABLE_AUTO_COMMIT_CONFIG_VALUE,
 						ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, AUTO_OFFSET_RESET_CONFIG_VALUE,
 						ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
@@ -36,7 +36,7 @@ public class KafkaConsumerConfig {
 	@Bean
 	public ConcurrentKafkaListenerContainerFactory<String, String> kafkaMessageListener() {
 		ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
-		factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
+		factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 		factory.setConsumerFactory(consumerFactory());
 		return factory;
 	}

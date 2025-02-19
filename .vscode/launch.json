@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringBootKafkaRetryableTopicApplication<kafka-retryable-topic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.chivalrous.kafka.retryable.topic.SpringBootKafkaRetryableTopicApplication",
+            "projectName": "kafka-retryable-topic",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

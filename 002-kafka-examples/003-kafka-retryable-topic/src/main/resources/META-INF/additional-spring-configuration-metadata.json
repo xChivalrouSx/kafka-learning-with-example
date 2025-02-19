@@ -1,0 +1,19 @@
+{
+    "properties": [
+        {
+            "name": "com.chivalrous.kafka.server",
+            "type": "java.lang.String",
+            "description": "Kafka server address"  
+        },
+        {
+            "name": "com.chivalrous.kafka.topic",
+            "type": "java.lang.String",
+            "description": "Name for Kafka test topic"  
+        },
+        {
+            "name": "com.chivalrous.kafka.consumer-group-id",
+            "type": "java.lang.String",
+            "description": "Consumer group id for the Kafka test consumer"  
+        }
+    ]
+}
